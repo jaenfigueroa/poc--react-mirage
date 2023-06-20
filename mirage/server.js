@@ -1,5 +1,5 @@
 import { createServer, Factory, Model } from 'miragejs'
-import { randomNumber } from './randomNumber'
+import { randomNumber } from '../src/utils/randomNumber'
 
 export default function () {
   createServer({
