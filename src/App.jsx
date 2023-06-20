@@ -21,6 +21,9 @@ const buttonClasses = 'bg-cyan-500 hover:bg-blue-500 p-4 rounded-lg m-3 font-bol
 // console.log(AGE_EXAMPLE)
 
 //PRUEBA REAL DE IMPORTACION DINAMICA DE MIRAGE
+//NO INCLUIR AL BUILDEAR USANDO EL LLAMADO -> tree shaking
+
+/* vite-ignore */
 if (import.meta.env.DEV) {
   import('../mirage/server')
     .then(server => server.default())
