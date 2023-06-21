@@ -2,7 +2,6 @@
 import { getUsers } from './utils/getUsers'
 
 // makeServer()
-const buttonClasses = 'bg-cyan-500 hover:bg-blue-500 p-4 rounded-lg m-3 font-bold text-white duration-300'
 
 // console.log(import.meta.env.MODE) //MODO DE TRABAJO
 // console.log(import.meta.env.BASE_URL) //URL BASE
@@ -21,19 +20,27 @@ const buttonClasses = 'bg-cyan-500 hover:bg-blue-500 p-4 rounded-lg m-3 font-bol
 // console.log(AGE_EXAMPLE)
 
 //PRUEBA REAL DE IMPORTACION DINAMICA DE MIRAGE
-//NO INCLUIR AL BUILDEAR USANDO EL LLAMADO -> tree shaking
+//ADEMAS AL BUILDEAR, COMO ESTAR DENTRO DE import.meta.env.DEV , NO SE AGREGAR AL DIST
+// console.error('varr 1')
 
-/* vite-ignore */
 if (import.meta.env.DEV) {
+
+  // console.error('varr2')
+
   import('../mirage/server')
-    .then(server => server.default())
+    .then(server => {
+      // console.error('varr2.5')
+      server.default()
+    })
     .catch(err => console.log(err))
 }
+
+// console.error('varr 3')
 
 function App() {
   return (
     <div className='app'>
-      <button className={buttonClasses} onClick={getUsers}>
+      <button className='button' onClick={getUsers}>
         Traer usuarios
       </button>
     </div>

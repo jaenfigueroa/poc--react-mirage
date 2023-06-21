@@ -1,4 +1,4 @@
-export const getUsers =async () => {
+export const getUsers = async () => {
   try {
     const response = await fetch('/api/users')
     const data = await response.json()
