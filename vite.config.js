@@ -8,7 +8,8 @@ dotenv.config()
 export default defineConfig({
   plugins: [react()],
 
-  //PARA IGNORAR CARPETAS AL BUILDEAR - QUEREOS IGNOARA TODO LO QUE ESTA DENTRO DE LA CARPETA MIRAGE
+  //PARA IGNORAR CARPETAS AL BUILDEAR
+  //QUEREOS IGNORAR TODO LO QUE ESTA DENTRO DE LA CARPETA MIRAGE
   rollupOptions: {
     input: {
       exclude: 'mirage/**',

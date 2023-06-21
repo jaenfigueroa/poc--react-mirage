@@ -1,8 +1,6 @@
 import { createServer, Factory, Model } from 'miragejs'
 import { randomNumber } from '../src/utils/randomNumber'
 
-// console.error('prubea dentro')
-
 export default function () {
   createServer({
     models: {
